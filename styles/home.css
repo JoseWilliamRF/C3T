@@ -1,5 +1,5 @@
 #home {
-  min-height: calc(100vh - 106px);
+  min-height: calc(100dvh - 106px);
 }
 #cta {
   display: flex;
@@ -45,4 +45,23 @@
 
 .cta-buttons .btn-default {
   margin: 1% 2%;
+}
+
+@media screen and (max-width: 1170px) {
+  #cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #home .title {
+    font-size: 1.5rem;
+  }
+
+  #home .subtitle {
+    font-size: 1rem;
+  }
+
+  #home .cta-buttons {
+    margin-top: 3rem;
+  }
 }
