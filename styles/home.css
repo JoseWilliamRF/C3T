@@ -1,0 +1,48 @@
+#home {
+  min-height: calc(100vh - 106px);
+}
+#cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cta .initial {
+  color: white;
+}
+#cta .social-media-buttons {
+  display: flex;
+  align-items: center;
+}
+
+#home .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+#home .title {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#home .subtitle {
+  width: 60%;
+  color: white;
+  font-weight: 200;
+  text-align: center;
+}
+
+#home .cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-buttons .btn-default {
+  margin: 1% 2%;
+}
