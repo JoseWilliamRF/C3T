@@ -1,12 +1,13 @@
 #home {
   min-height: calc(100dvh - 106px);
   scroll-margin-top: 106px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-    url(../assets/background7.png);
-  background-size: 100%;
+
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  animation: slowZoom 50s infinite alternate ease-in-out;
+
+  position: relative;
+  overflow: hidden;
 }
 
 #cta {
@@ -74,27 +75,53 @@
   }
 }
 
-@keyframes slowZoom {
+#home::before,
+#services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: scaleAnimation 50s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+#home::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../assets/background7.png);
+}
+
+#services::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../assets/background2.png);
+}
+
+@keyframes scaleAnimation {
   0% {
-    background-size: 100%;
+    transform: scale(1);
   }
   100% {
-    background-size: 120%;
+    transform: scale(1.1);
   }
 }
 
 #services {
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-    url(../assets/background9.png);
+
   background-position: center;
   min-height: calc(100dvh - 106px);
   scroll-margin-top: 106px;
 
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  animation: slowZoom 50s infinite alternate ease-in-out;
+
+  position: relative;
+  overflow: hidden;
 }
 
 #services .services-container {
@@ -198,4 +225,33 @@
 }
 #areas .areas-subtitle {
   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1170px) {
+  #services {
+    text-align: justify;
+    padding: 0rem 1rem;
+  }
+
+  #areas {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #services p {
+    font-size: 1rem;
+    max-width: 90%;
+    text-align: justify;
+  }
+  #services .services-description {
+    text-align: justify;
+  }
+
+  .services-description br {
+    display: none;
+  }
+
+  #services .services-title {
+    font-size: 1rem;
+  }
 }
