@@ -1,13 +1,12 @@
 #home {
-  min-height: calc(100dvh - 106px);
-  scroll-margin-top: 106px;
+  min-height: calc(100dvh - 98px);
+  scroll-margin-top: 98px;
 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  position: relative;
-  overflow: hidden;
+  background-image: linear-gradient(rgba(14, 27, 44, 0.4), rgba(14, 27, 44, 0)),
+    url(../assets/background7.png);
 }
 
 #cta {
@@ -42,7 +41,7 @@
 #home .subtitle {
   width: 60%;
   color: white;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -75,53 +74,15 @@
   }
 }
 
-#home::before,
-#services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: scaleAnimation 50s infinite alternate ease-in-out;
-  z-index: -1;
-}
-
-#home::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-    url(../assets/background7.png);
-}
-
-#services::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-    url(../assets/background2.png);
-}
-
-@keyframes scaleAnimation {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
 #services {
   color: white;
-
+  background-image: linear-gradient(to bottom, #0e1b2c, #1a3c4d);
   background-position: center;
-  min-height: calc(100dvh - 106px);
-  scroll-margin-top: 106px;
-
+  min-height: calc(100dvh - 98px);
+  scroll-margin-top: 98px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  position: relative;
-  overflow: hidden;
 }
 
 #services .services-container {
@@ -137,7 +98,7 @@
   border-radius: 500px;
 }
 #services .services-title {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 #services .services-description {
   text-align: center;
@@ -230,7 +191,7 @@
 @media screen and (max-width: 1170px) {
   #services {
     text-align: justify;
-    padding: 0rem 1rem;
+    padding: 2rem 1rem;
   }
 
   #areas {
@@ -241,7 +202,7 @@
   #services p {
     font-size: 1rem;
     max-width: 90%;
-    text-align: justify;
+    margin-inline: auto;
   }
   #services .services-description {
     text-align: justify;
@@ -252,6 +213,7 @@
   }
 
   #services .services-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
