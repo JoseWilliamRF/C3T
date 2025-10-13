@@ -1,12 +1,14 @@
 #home {
   min-height: calc(100dvh - 106px);
   scroll-margin-top: 106px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-    url(../assets/background2.png);
-  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../assets/background7.png);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  animation: slowZoom 50s infinite alternate ease-in-out;
 }
+
 #cta {
   display: flex;
   align-items: center;
@@ -72,14 +74,27 @@
   }
 }
 
+@keyframes slowZoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 120%;
+  }
+}
+
 #services {
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-    url(../assets/background3.png);
-  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../assets/background9.png);
   background-position: center;
   min-height: calc(100dvh - 106px);
   scroll-margin-top: 106px;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: slowZoom 50s infinite alternate ease-in-out;
 }
 
 #services .services-container {
@@ -119,11 +134,41 @@
   padding: 1rem;
   text-align: justify;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
 .areas-offered a {
   text-decoration: none;
   color: white;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+}
+.areas-offered:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+.areas-offered::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.areas-offered:hover::before {
+  opacity: 0.4;
+}
+
+.areas-offered:hover a {
+  color: #1c1c1c; /* O texto fica escuro */
 }
 
 .areas-offered:nth-child(1) {
