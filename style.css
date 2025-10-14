@@ -6,7 +6,7 @@
 }
 body {
   padding-top: 98px;
-  min-height: 100vh;
+  min-height: 100dvh;
 
   background-size: cover;
   background-repeat: no-repeat;
