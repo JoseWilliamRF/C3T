@@ -1,12 +1,6 @@
 #home {
   min-height: calc(100dvh - 98px);
   scroll-margin-top: 98px;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: linear-gradient(rgba(14, 27, 44, 0.4), rgba(14, 27, 44, 0)),
-    url(../assets/background7.png);
 }
 
 #cta {
@@ -76,7 +70,7 @@
 
 #services {
   color: white;
-  background-image: linear-gradient(to bottom, #0e1b2c, #1a3c4d);
+  /* background-image: linear-gradient(to bottom, #0e1b2c, #1a3c4d); */
   background-position: center;
   min-height: calc(100dvh - 98px);
   scroll-margin-top: 98px;

@@ -4,7 +4,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 4;
-  background: linear-gradient(to right, #1e3a4d, #2a6d7c);
+  /* background: linear-gradient(to right, #1e3a4d, #2a6d7c); */
   backdrop-filter: blur(8px);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }

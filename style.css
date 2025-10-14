@@ -7,6 +7,12 @@
 body {
   padding-top: 98px;
   height: 100vh;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(rgba(14, 27, 44, 0.4), rgba(14, 27, 44, 0)),
+    url(../assets/bg-ideia1.jpg);
 }
 
 .btn-default {

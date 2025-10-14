@@ -3,7 +3,7 @@
 
   background-position: center;
   min-height: calc(100dvh - 98px);
-  background-image: linear-gradient(to bottom, #1a3c4d, #0e1b2c);
+  /* background-image: linear-gradient(to bottom, #1a3c4d, #0e1b2c); */
 }
 
 #clients .clients-title {
