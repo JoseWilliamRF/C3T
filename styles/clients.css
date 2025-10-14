@@ -1,6 +1,6 @@
 #clients {
   color: white;
-
+  scroll-margin-top: 98px;
   background-position: center;
   min-height: calc(100dvh - 98px);
 }
