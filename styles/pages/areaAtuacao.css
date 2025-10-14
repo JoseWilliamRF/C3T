@@ -1,0 +1,32 @@
+#armazenagem {
+  min-height: calc(100dvh - 98px);
+  scroll-margin-top: 98px;
+}
+
+.list-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+}
+
+.area-title {
+  margin-bottom: 2rem;
+}
+
+.area-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.card-list {
+  flex: 1;
+  line-height: 32px;
+}
+#armazenagem .card {
+  flex: 1;
+  margin-top: 11%;
+}
+.card img {
+  border-radius: 20px;
+  width: 100%;
+}
