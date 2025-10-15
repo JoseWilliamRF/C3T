@@ -1,32 +1,104 @@
-#armazenagem {
-  min-height: calc(100dvh - 98px);
+.area-detail-section {
+  padding: 2rem 3%;
   scroll-margin-top: 98px;
 }
 
+.alimenticia-title,
+.armazenagem-title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.area-subtitle {
+  margin-bottom: 1rem;
+}
+
 .list-content {
+  padding: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
   color: white;
+  background-image: linear-gradient(to bottom, #2a4b5cb5, #0e1b2cb6);
+  border-radius: 20px;
 }
 
-.area-title {
-  margin-bottom: 2rem;
+.list-intro {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.area-subtitle {
-  margin-bottom: 1.5rem;
+.list-description {
+  list-style-position: inside;
 }
-
 .card-list {
   flex: 1;
-  line-height: 32px;
+  text-align: justify;
 }
-#armazenagem .card {
+
+.card-list li {
+  padding-left: 2rem;
+}
+
+.carrossel {
+  overflow-x: auto;
+  display: flex;
+  gap: 1em;
   flex: 1;
-  margin-top: 11%;
+
+  background-color: aliceblue;
+  border-radius: 20px;
+  scroll-behavior: smooth;
+  anchor-name: --carrossel;
+  scroll-snap-type: x mandatory;
 }
-.card img {
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+.carrossel::scroll-button(right),
+.carrossel::scroll-button(left) {
+  content: '→';
+  border: none;
+  display: flex;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: #316a88;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --carrossel;
+  position-area: right center;
+  translate: -50%;
+}
+
+.carrossel::scroll-button(left) {
+  content: '←';
+  position-area: left center;
+  translate: 50%;
+}
+
+.carrossel::scroll-button(right):disabled,
+.carrossel::scroll-button(left):disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.carrossel img {
+  scroll-snap-align: start;
   border-radius: 20px;
   width: 100%;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.9);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.carrossel img:hover {
+  transform: scale(1.03);
 }

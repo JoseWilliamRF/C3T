@@ -7,10 +7,10 @@
 body {
   padding-top: 98px;
   min-height: 100dvh;
+  background-image: url('../assets/images/bg-ideia1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../assets/images/bg-ideia1.jpg);
   background-attachment: fixed;
 }
 
