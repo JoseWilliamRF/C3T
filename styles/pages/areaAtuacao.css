@@ -46,8 +46,6 @@
   display: flex;
   gap: 1em;
   flex: 1;
-
-  background-color: aliceblue;
   border-radius: 20px;
   scroll-behavior: smooth;
   anchor-name: --carrossel;
@@ -56,39 +54,6 @@
 
 .carrossel::-webkit-scrollbar {
   display: none;
-}
-.carrossel::scroll-button(right),
-.carrossel::scroll-button(left) {
-  content: '→';
-  border: none;
-  display: flex;
-  color: white;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 40px;
-  background-color: #316a88;
-  font-size: 1.25rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  position: fixed;
-  position-anchor: --carrossel;
-  position-area: right center;
-  translate: -50%;
-}
-
-.carrossel::scroll-button(left) {
-  content: '←';
-  position-area: left center;
-  translate: 50%;
-}
-
-.carrossel::scroll-button(right):disabled,
-.carrossel::scroll-button(left):disabled {
-  opacity: 0.5;
-  cursor: auto;
 }
 
 .carrossel img {
@@ -101,4 +66,49 @@
 }
 .carrossel img:hover {
   transform: scale(1.03);
+}
+
+.list-content {
+  position: relative;
+}
+
+.btn-carousel {
+  color: white;
+  border: none;
+  background-color: #316a88;
+  border-radius: 12px;
+  padding: 0;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  width: 45px;
+  height: 40px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+btn-carousel:hover {
+  background-color: #244669;
+}
+.btn-prev {
+  left: 50%;
+}
+.btn-next {
+  right: -1.2rem;
+}
+
+.btn-carousel.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1170px) {
 }
