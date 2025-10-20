@@ -3,6 +3,10 @@ const mobileMenu = document.getElementById('mobile_menu');
 const icon = mobileBtn.querySelector('.fa-solid');
 const carrosseisArea = document.querySelectorAll('.carrossel');
 
+// --- Lógica de Expansão dos Cards de Projeto ---
+
+const detailButtons = document.querySelectorAll('#project-grid .btn-details');
+
 mobileBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   icon.classList.toggle('fa-bars');
@@ -63,5 +67,26 @@ carrosseisArea.forEach(carrossel => {
   botaoAnterior.addEventListener('click', () => {
     const larguraVisivel = carrossel.offsetWidth;
     carrossel.scrollLeft -= larguraVisivel * 0.8;
+  });
+});
+
+// --- Lógica de Expansão dos Cards de Projeto ---
+detailButtons.forEach(button => {
+  button.addEventListener('click', event => {
+    const card = event.target.closest('.project-card');
+    if (card) {
+      card.classList.toggle('expanded');
+
+      if (card.classList.contains('expanded')) {
+        detailButtons.forEach(otherButton => {
+          const otherCard = otherButton.closest('.project-card');
+          if (otherCard && otherCard !== card) {
+            otherCard.classList.remove('expanded');
+          }
+        });
+      }
+    } else {
+      console.error('Não foi possível encontrar o .project-card pai do botão.');
+    }
   });
 });
