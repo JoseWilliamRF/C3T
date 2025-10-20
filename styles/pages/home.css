@@ -34,11 +34,12 @@
   text-transform: uppercase;
 }
 
-#home .subtitle {
+#home h2 {
   width: 60%;
   color: white;
   font-weight: 300;
-  text-align: center;
+  text-align: justify;
+  margin-top: 2rem;
 }
 
 #home .cta-buttons {
@@ -59,10 +60,6 @@
 
   #home .title {
     font-size: 1.5rem;
-  }
-
-  #home .subtitle {
-    font-size: 1rem;
   }
 
   #home .cta-buttons {
@@ -96,6 +93,7 @@
 }
 #services .services-description {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 #areas {
@@ -194,7 +192,6 @@
   }
 
   #services p {
-    font-size: 1rem;
     max-width: 90%;
     margin-inline: auto;
   }
