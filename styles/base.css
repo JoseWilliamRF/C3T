@@ -27,9 +27,12 @@ section {
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .subtitle {
+  color: white;
+
   display: flex;
   font-weight: 500;
   font-size: 1.5rem;
