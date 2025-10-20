@@ -7,6 +7,10 @@ const carrosseisArea = document.querySelectorAll('.carrossel');
 
 const detailButtons = document.querySelectorAll('#project-grid .btn-details');
 
+// --- Lógica do Slideshow Automático ---
+const slideInterval = 4000;
+const projectCards = document.querySelectorAll('#project-grid .project-card');
+
 mobileBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   icon.classList.toggle('fa-bars');
@@ -89,4 +93,49 @@ detailButtons.forEach(button => {
       console.error('Não foi possível encontrar o .project-card pai do botão.');
     }
   });
+});
+
+// --- Lógica do Slideshow Automático ---
+projectCards.forEach(card => {
+  const imagesAttr = card.dataset.images;
+
+  if (!imagesAttr) {
+    console.warn("Card encontrado sem o atributo 'data-images':", card);
+    return;
+  }
+  const imagePaths = imagesAttr
+    .split(',')
+    .map(path => path.trim())
+    .filter(path => path);
+
+  const imgElement = card.querySelector('img');
+  if (!imgElement || imagePaths.length <= 1) {
+    return;
+  }
+
+  let currentImageIndex = 0;
+  let isAnimating = false; // Variável para evitar sobreposição de animações
+  const animationDuration = 1800; // Duração total da animação CSS (ex: 0.8s = 800ms)
+
+  function showNextImage() {
+    if (isAnimating) {
+      return;
+    }
+    isAnimating = true; // Marca que a animação começou
+
+    imgElement.classList.add('image-fading');
+
+    setTimeout(() => {
+      currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
+      imgElement.src = imagePaths[currentImageIndex];
+    }, animationDuration / 2);
+
+    setTimeout(() => {
+      imgElement.classList.remove('image-fading');
+      isAnimating = false;
+    }, animationDuration);
+
+    setTimeout(showNextImage, slideInterval);
+  }
+  setTimeout(showNextImage, slideInterval);
 });
