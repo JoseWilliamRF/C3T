@@ -133,7 +133,7 @@ projectCards.forEach(card => {
       //Espera o fade-out
       currentImageIndex = (currentImageIndex + 1) % imagePaths.length; //Calcula o próximo índice, voltando ao início
       imgElement.src = imagePaths[currentImageIndex]; //Atualiza a fonte da imagem
-    }, animationDuration / 2); //Espera metade do tempo da animação
+    }, animationDuration * 0.5); //Espera metade do tempo da animação
 
     setTimeout(() => {
       //Espera o fade-in completar
