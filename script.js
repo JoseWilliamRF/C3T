@@ -122,6 +122,7 @@ projectCards.forEach(card => {
   function showNextImage() {
     //Define a função para trocar a imagem
     if (!slideShowTimerId || isAnimating) {
+      if (!slideshowTimerId) clearTimeout(slideshowTimerId);
       //Só executa se o slideshow estiver ativo E não estiver no meio de um fade
       return; //Impede múltiplas execuções ou rodar quando parado
     }
@@ -133,15 +134,16 @@ projectCards.forEach(card => {
       //Espera o fade-out
       currentImageIndex = (currentImageIndex + 1) % imagePaths.length; //Calcula o próximo índice, voltando ao início
       imgElement.src = imagePaths[currentImageIndex]; //Atualiza a fonte da imagem
-    }, animationDuration * 0.5); //Espera metade do tempo da animação
+    }, animationDuration / 2); //Espera metade do tempo da animação
 
     setTimeout(() => {
       //Espera o fade-in completar
       imgElement.classList.remove('image-fading'); //Remove a classe da animação, pronto para a próxima vez
       isAnimating = false; //Reseta a flag de animação
+      if (slideShowTimerId) {
+        slideShowTimerId = setTimeout(showNextImage, slideInterval);
+      } //Agenda a *próxima* chamada a si mesma, continuando o loop
     }, animationDuration); //Espera o tempo total da animação
-
-    slideShowTimerId = setTimeout(showNextImage, slideInterval); //Agenda a *próxima* chamada a si mesma, continuando o loop
   }
 
   //Função para INICIAR o slideshow
