@@ -34,31 +34,32 @@
 .project-card img {
   width: 100%;
   height: auto;
-  max-height: 450px;
+  max-height: 300px;
   object-fit: cover;
   display: block;
-  border-radius: 20px;
 }
 
 .project-info {
   display: flex;
   flex-direction: column;
   margin: 0.5rem 1rem;
-  flex-grow: 1;
 }
 
 .project-info h3 {
   font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  min-height: 2.8em;
+  text-align: left;
 }
 
 .project-description-short {
   margin: 0.5rem 0 1rem 0;
   font-size: 0.95rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-height: calc(0.95rem * 1.6 * 2);
   transition: opacity 0.4s ease, max-height 0.6s ease 0.3s; /* Atraso p/ altura */
   opacity: 1;
 }
@@ -67,7 +68,6 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  flex-grow: 1;
   transition: opacity 0.4s ease 0.3s, max-height 0.6s ease;
 }
 
@@ -108,15 +108,15 @@
 
 /*EXPANDIDO*/
 .project-card.expanded {
-  max-width: 90%;
   grid-column: span 2;
-  min-height: 450px;
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  z-index: 3;
+  min-height: auto;
 }
 
 .project-card.expanded .project-details-hidden {
   max-height: 500px; /* Altura grande o suficiente */
+
   opacity: 1;
   margin-top: 1rem; /* Adiciona espaço */
 }
@@ -136,4 +136,33 @@
 
 .image-fading {
   animation: fadeImage 1.8s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+  #project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-card.expanded {
+    max-width: 100%;
+  }
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-description-short,
+  .project-details-hidden li {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card.expanded {
+    grid-column: span 1;
+  }
 }
