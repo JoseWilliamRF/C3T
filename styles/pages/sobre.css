@@ -117,3 +117,67 @@
 .topic-content a:hover {
   text-decoration: underline;
 }
+@media screen and (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  #about-image {
+    display: none;
+  }
+
+  .about-visual {
+    flex: none;
+    width: 100%;
+    position: relative;
+    box-shadow: none;
+    max-width: 550px;
+    flex-basis: auto;
+  }
+
+  .about-text-content {
+    min-height: auto;
+    width: 100%;
+  }
+
+  .about-triggers {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    right: auto;
+    top: auto;
+    gap: 0.8rem;
+  }
+
+  .trigger {
+    background-color: rgba(42, 75, 92, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .trigger:hover {
+    transform: scale(1.05);
+    transform: translateX(0);
+  }
+  .topic-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .trigger {
+    padding: 6px 12px;
+    gap: 0.5rem;
+  }
+
+  .topic-content p,
+  .topic-content ul {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
