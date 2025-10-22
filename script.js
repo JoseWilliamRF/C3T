@@ -7,6 +7,10 @@ const carrosseisArea = document.querySelectorAll('.carrossel');
 const projectCards = document.querySelectorAll('#project-grid .project-card');
 const detailButtons = document.querySelectorAll('#project-grid .btn-details');
 
+// --- Lógica da Seção Sobre Interativa ---
+const aboutSection = document.getElementById('about-interactive');
+//Seleciona o container principal da interação.
+
 mobileBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   icon.classList.toggle('fa-bars');
@@ -90,3 +94,99 @@ detailButtons.forEach(button => {
     }
   });
 });
+
+// --- Lógica da Seção Sobre Interativa ---
+
+if (aboutSection) {
+  //Só executa o código abaixo se a seção existir nesta página
+  //pegar todos os gatilhos clicaveis com uma constante que pega todos
+
+  const aboutTriggers = aboutSection.querySelectorAll('.trigger');
+
+  //Pega todos os elementos com a classe '.topic-content' DENTRO da seção 'about'.
+  const topicContents = aboutSection.querySelectorAll('.topic-content');
+
+  //Pega o elemento da imagem pelo seu ID DENTRO da seção 'about'.
+
+  const aboutImage = aboutSection.querySelector('#about-image');
+
+  const topicsData = {
+    empresa: {
+      imgSrc: './assets/cards-sobrenos/fachadac3t.png',
+      textId: 'topic-empresa',
+    },
+    civil: {
+      imgSrc: './assets/cards-sobrenos/civil.png', // << SUBSTITUA PELA SUA IMAGEM
+      textId: 'topic-civil',
+    },
+    mecanica: {
+      imgSrc: './assets/cards-sobrenos/mecanica.png', // << SUBSTITUA PELA SUA IMAGEM
+      textId: 'topic-mecanica',
+    },
+    eletrica: {
+      // Chave entre aspas por causa do hífen
+      imgSrc: './assets/cards-sobrenos/eletrica.png', // << SUBSTITUA PELA SUA IMAGEM
+      textId: 'topic-eletrica', // ID corresponde ao data-topic
+    },
+    necessidade: {
+      imgSrc: './assets/cards-sobrenos/documentacao.png', // << SUBSTITUA PELA SUA IMAGEM
+      textId: 'topic-necessidade',
+    },
+    equipe: {
+      imgSrc: './assets/cards-sobrenos/equipe.png', // << SUBSTITUA PELA SUA IMAGEM
+      textId: 'topic-equipe',
+    },
+  };
+
+  aboutTriggers.forEach(trigger => {
+    //Itera sobre todos os triggers e adiciona um listener de clique
+    trigger.addEventListener('click', () => {
+      const topic = trigger.dataset.topic; //Lê o valor do atributo 'data-topic' do trigger clicado
+
+      if (!topicsData[topic] || trigger.classList.contains('active')) {
+        //Verifica se o 'topic' existe no 'topicsData' E se o trigger clicado NÃO tem a classe 'active'.
+        return;
+      }
+
+      //encontra os elementos que TÊM a classe 'active' e a remove
+      const currentActiveTrigger =
+        aboutSection.querySelector('.trigger.active');
+
+      const currentActiveContent = aboutSection.querySelector(
+        '.topic-content.active',
+      );
+
+      if (currentActiveTrigger) currentActiveTrigger.classList.remove('active');
+      if (currentActiveContent) currentActiveContent.classList.remove('active');
+
+      //iniciar a animação de fade-out da imagem.
+
+      if (aboutImage) aboutImage.classList.add('fading');
+
+      //troca de imagem e texto só pode acontecer DEPOIS que a animação de fade-out (invisibilidade) ocorrer
+
+      //(setTimeout): Espera um tempo (igual à duração da transition no CSS) antes de executar o próximo passo.
+      setTimeout(() => {
+        if (aboutImage) aboutImage.src = topicsData[topic].imgSrc; //Atualiza o atributo 'src' da imagem com a URL do 'topicsData'.
+
+        //pega o ID do texto, que está em topicsData[topic].textId.
+        const targetId = topicsData[topic].textId;
+        //montar o seletor CSS, que começa com '#' e depois vem o ID
+        const seletorCss = '#' + targetId;
+        //uso esse seletor CSS montado com querySelector
+        const newContent = aboutSection.querySelector(seletorCss);
+
+        if (newContent) {
+          newContent.classList.add('active');
+        }
+
+        //Adiciona a classe 'active' ao 'trigger' que iniciou o evento
+        trigger.classList.add('active');
+
+        //Remove a classe de fade-out para que a imagem possa fazer o fade-in (controlado pelo CSS)."
+        if (aboutImage) aboutImage.classList.remove('fading');
+        //este valor (600ms) DEVE ser igual à duração da 'transition' de 'opacity' definida no seu CSS para #about-image e .topic-content
+      }, 600);
+    });
+  });
+}
