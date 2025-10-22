@@ -121,23 +121,6 @@
   margin-top: 1rem; /* Adiciona espaço */
 }
 
-@keyframes fadeImage {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.04;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.image-fading {
-  animation: fadeImage 1.8s ease-in-out;
-}
-
 @media screen and (max-width: 992px) {
   #project-grid {
     grid-template-columns: repeat(2, 1fr);
