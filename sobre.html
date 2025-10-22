@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <title>C3T Engenharia</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <a href="./index.html">
+          <img src="./assets/images/logo.png" alt="C3T LOGO" class="c3t_logo" />
+        </a>
+        <ul id="nav_list">
+          <li class="nav-item"><a href="./index.html">ÍNICIO</a></li>
+          <li class="nav-item">
+            <a href="./areasAtuacao.html">ÁREAS DE ATUAÇÃO</a>
+          </li>
+          <li class="nav-item"><a href="./projetos.html">PROJETOS</a></li>
+          <li class="nav-item"><a href="./sobre.html">SOBRE</a></li>
+          <li class="nav-item"><a href="#">TRABALHE CONOSCO</a></li>
+          <li class="nav-item"><a href="#">CONTATO</a></li>
+        </ul>
+
+        <a href="#" target="_blank" class="btn-default" id="btn-large"
+          >FALE CONOSCO</a
+        >
+        <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
+      </nav>
+
+      <div id="mobile_menu">
+        <ul id="menu-list">
+          <li class="nav-item"><a href="./index.html">ÍNICIO</a></li>
+          <li class="nav-item">
+            <a href="./areasAtuacao.html">ÁREAS DE ATUAÇÃO</a>
+          </li>
+          <li class="nav-item"><a href="./projetos.html">PROJETOS</a></li>
+          <li class="nav-item"><a href="./sobre.html">SOBRE</a></li>
+          <li class="nav-item"><a href="#">TRABALHE CONOSCO</a></li>
+          <li class="nav-item"><a href="#">CONTATO</a></li>
+        </ul>
+        <a href="#" target="_blank" class="btn-default">FALE CONOSCO</a>
+      </div>
+    </header>
+    <main id="content">
+      <section class="projects area-detail-section">
+        <div class="projects-title">
+          <h1 class="top-title">Sobre nós</h1>
+          <h2 class="subtitle">Conheça a C3T ENGENHARIA</h2>
+        </div>
+      </section>
+      <section id="about-interactive">
+        <div class="about-container">
+          <div class="about-visual">
+            <img
+              id="about-image"
+              src="./assets/images/fachada c3t.jpg"
+              alt="c3t engenharia"
+            />
+            <div class="about-triggers">
+              <span class="trigger active" data-topic="empresa">Civil</span>
+              <span class="trigger" data-topic="civil">Mecânica</span>
+              <span class="trigger" data-topic="mecanica"
+                >Eletrica e Automação</span
+              >
+              <span class="trigger" data-topic="eletrica-automacao"
+                >Documentação</span
+              >
+              <span class="trigger" data-topic="necessidade">Equipe</span>
+              <span class="trigger" data-topic="equipe">C3T Engenharia</span>
+            </div>
+          </div>
+
+          <div class="about-text-content">
+            <div class="topic-content active" id="topic-empresa">
+              <h2>A C3T Engenharia:</h2>
+              <p>
+                Trabalha na concepção de processos envolvendo recepção,
+                armazenagem e expedição de graneis sólidos do setor
+                agroindustrial por meio de análise espacial, volumétrica,
+                estudos de fluxo, estudos de tráfego, eficiência energética,
+                aperfeiçoamento de recursos e equiparação de cenários.
+              </p>
+              <p>
+                Elabora projetos de armazenagem de soja, milho, açúcar,
+                fertilizantes e demais insumos produzidos por toda cadeia
+                agrícola brasileira.
+              </p>
+
+              <p>
+                Todos os nossos projetos são desenvolvidos, compatibilizados e
+                implementados através do uso da metodologia BIM, a fim de
+                antecipar decisões e integrar a equipe técnica de modo a
+                potencializar a produção e minimizar o prazo e os custos
+                envolvidos na execução.
+              </p>
+
+              <p>
+                Desenvolve projetos conceituais e básicos, contemplando plantas,
+                cortes, vistas e detalhes das disciplinas civil, mecânica,
+                elétrica, instrumentação e automação.
+              </p>
+            </div>
+
+            <div class="topic-content" id="topic-civil">
+              <h2>Engenharia Civil</h2>
+              <p>
+                Na disciplina de civil, desenvolve o layout do projeto levando
+                em conta todas as suas interfaces como a terraplanagem,
+                arruamento, drenagem, infraestrutura e superestrutura de
+                elementos de concreto e aço. Por meio da análise de sondagem,
+                caracterização do solo e investigações geotécnicas realizadas em
+                campo, é possível dimensionar o tipo de fundação de acordo com
+                as cargas e características do terreno
+              </p>
+            </div>
+
+            <div class="topic-content" id="topic-mecanica">
+              <h2>Engenharia Mecânica</h2>
+              <p>
+                Na disciplina de mecânica, todos os equipamentos são calculados
+                e modelados em 3D, conforme dimensões dos diversos fabricantes e
+                recomendações das normas técnicas vigentes.
+              </p>
+            </div>
+            <div class="topic-content" id="topic-eletrica-automacao">
+              <h2>Engenharia Elétrica e Automação</h2>
+              <p>
+                Na disciplina de elétrica são feitos todos os dimensionamentos,
+                modelagens e lançamentos de toda a infraestrutura aérea e
+                subterrânea de força, iluminação, comando, aterramento, SPDA e
+                todos os equipamentos e painéis elétricos para as subestações de
+                entrada de energia.
+              </p>
+              <p>
+                Na disciplina de automação é definida a arquitetura de automação
+                com especificação e dimensionamento dos equipamentos que serão
+                utilizados para fazer a supervisão, monitoramento e controle de
+                toda a planta industrial através do sistema SCADA.
+              </p>
+            </div>
+
+            <div class="topic-content" id="topic-necessidade">
+              <h2>Documentação necessária</h2>
+              <ul>
+                Para todas as disciplinas, desenvolve a documentação necessária
+                para garantir a equidade nos processos licitatórios, tais como:
+                <li>Carta convite.</li>
+                <li>Critérios de projeto.</li>
+                <li>Memoriais descritivos.</li>
+                <li>Memoriais de cálculo.</li>
+                <li>Relatórios técnicos.</li>
+                <li>
+                  Listas de carga, materiais, equipamentos, instrumentos,
+                  documentos etc.
+                </li>
+                <li>Folhas de dados.</li>
+                <li>Estrutura analítica de projeto (EAP).</li>
+                <li>Cronograma básico do projeto.</li>
+                <li>Planilhas de quantidades e preços.</li>
+                <li>BIM execution plan (BEP) / implemention plan (BIP).</li>
+                <li>BIM mandate.</li>
+              </ul>
+            </div>
+            <div class="topic-content" id="topic-equipe">
+            <h2>Equipe técnica</h2>
+            <p>
+              Contamos com equipe especializada em engenharia, orçamento e
+              planejamento, podendo ofertar a solução completa para seu negócio
+              que vai desde o Capex com estimativa de custos inicial até o
+              orçamento e planejamento detalhados. Tudo isso para viabilizar a
+              realização da sua obra.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="c3tFooter">
+      <div class="footer-column">
+        <h4>SEDE</h4>
+        <address class="footer-address">
+          Rua Luiz Freire Benchetrit, 552.<br />
+          CEP: 79040-140 <br />
+          Bairro: Chácara Cachoeira<br />
+          Campo Grande / MS<br />
+          <a href="tel:+556732042773">Telefone:+55 67 3204-2773 </a><br />
+          <a href="mailto:c3t@c3tengenharia.com">
+            E-mail: c3t@c3tengenharia.com</a
+          >
+        </address>
+      </div>
+      <div class="footer-column">
+        <h4>Conecte-se</h4>
+        <div class="social-media-buttons">
+          <a href="#"><i class="fa-brands fa-whatsapp"></i> </a>
+          <a href="https://www.instagram.com/c3t_engenharia/" target="_blank">
+            <i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/c3t-engenharia"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 C3T Engenharia. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

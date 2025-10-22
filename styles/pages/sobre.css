@@ -1,0 +1,120 @@
+#about-interactive {
+  color: white;
+}
+.about-container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.about-visual {
+  flex: 0 0 45%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+#about-image {
+  width: 100%;
+  border-radius: 15px;
+  height: auto;
+  display: block;
+  transition: opacity 0.6s ease-in-out;
+}
+/* Classe adicionada/removida via JS para controlar o fade */
+#about-image.fading {
+  opacity: 0.2; /* Fica bem transparente durante a troca */
+}
+/* Container dos Gatilhos */
+.about-triggers {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 3;
+  align-items: flex-start;
+}
+
+/* Estilo de cada Gatilho (Span) */
+.trigger {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(42, 75, 92, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+.trigger:hover {
+  transform: scale(1.1) translateX(5px);
+  color: white;
+  background-color: rgba(92, 137, 181, 0.7);
+}
+/* Estilo do Gatilho Ativo */
+.trigger.active {
+  color: white;
+  font-weight: 700;
+  background-color: #5c89b5;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Coluna da Direita (Conteúdo de Texto) --- */
+.about-text-content {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+}
+
+/* Estilo base para TODOS os blocos de texto */
+.topic-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+/* Bloco de texto ATIVO (visível) */
+
+.topic-content.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+/* Estilos internos dos blocos de texto (Títulos, Parágrafos, Lista) */
+.topic-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #a0b4c8;
+}
+.topic-content p,
+.topic-content ul {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.topic-content ul {
+  padding-left: 1.5rem;
+}
+.topic-content li {
+  margin-bottom: 0.5rem;
+}
+.topic-content a {
+  color: #87ceeb;
+  text-decoration: none;
+}
+.topic-content a:hover {
+  text-decoration: underline;
+}
