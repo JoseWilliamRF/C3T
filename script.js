@@ -138,6 +138,16 @@ if (aboutSection) {
     },
   };
 
+  //função que baixe todas as imagens
+  function preloadAllImages() {
+    Object.values(topicsData).forEach(topic => {
+      const img = new Image();
+      img.src = topic.imgSrc;
+    });
+  }
+
+  preloadAllImages();
+
   aboutTriggers.forEach(trigger => {
     //Itera sobre todos os triggers e adiciona um listener de clique
     trigger.addEventListener('click', () => {
@@ -173,10 +183,9 @@ if (aboutSection) {
 
         if (aboutImage) aboutImage.classList.add('fading');
 
-        const newImg = new Image();
-
-        newImg.onload = () => {
+        setTimeout(() => {
           if (aboutImage) aboutImage.src = topicsData[topic].imgSrc;
+
           const newContent = aboutSection.querySelector(
             '#' + topicsData[topic].textId,
           );
@@ -184,8 +193,7 @@ if (aboutSection) {
 
           trigger.classList.add('active');
           if (aboutImage) aboutImage.classList.remove('fading');
-        };
-        newImg.src = topicsData[topic].imgSrc;
+        }, 600);
       }
     });
   });
