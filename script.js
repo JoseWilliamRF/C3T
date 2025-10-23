@@ -159,34 +159,34 @@ if (aboutSection) {
       if (currentActiveTrigger) currentActiveTrigger.classList.remove('active');
       if (currentActiveContent) currentActiveContent.classList.remove('active');
 
-      //iniciar a animação de fade-out da imagem.
+      const isMobile = window.innerWidth <= 992;
 
-      if (aboutImage) aboutImage.classList.add('fading');
+      if (isMobile) {
+        const newContent = aboutSection.querySelector(
+          '#' + topicsData[topic].textId,
+        );
 
-      //troca de imagem e texto só pode acontecer DEPOIS que a animação de fade-out (invisibilidade) ocorrer
-
-      //(setTimeout): Espera um tempo (igual à duração da transition no CSS) antes de executar o próximo passo.
-      setTimeout(() => {
-        if (aboutImage) aboutImage.src = topicsData[topic].imgSrc; //Atualiza o atributo 'src' da imagem com a URL do 'topicsData'.
-
-        //pega o ID do texto, que está em topicsData[topic].textId.
-        const targetId = topicsData[topic].textId;
-        //montar o seletor CSS, que começa com '#' e depois vem o ID
-        const seletorCss = '#' + targetId;
-        //uso esse seletor CSS montado com querySelector
-        const newContent = aboutSection.querySelector(seletorCss);
-
-        if (newContent) {
-          newContent.classList.add('active');
-        }
-
-        //Adiciona a classe 'active' ao 'trigger' que iniciou o evento
+        if (newContent) newContent.classList.add('active');
         trigger.classList.add('active');
+      } else {
+        //iniciar a animação de fade-out da imagem.
 
-        //Remove a classe de fade-out para que a imagem possa fazer o fade-in (controlado pelo CSS)."
-        if (aboutImage) aboutImage.classList.remove('fading');
-        //este valor (600ms) DEVE ser igual à duração da 'transition' de 'opacity' definida no seu CSS para #about-image e .topic-content
-      }, 600);
+        if (aboutImage) aboutImage.classList.add('fading');
+
+        const newImg = new Image();
+
+        newImg.onload = () => {
+          if (aboutImage) aboutImage.src = topicsData[topic].imgSrc;
+          const newContent = aboutSection.querySelector(
+            '#' + topicsData[topic].textId,
+          );
+          if (newContent) newContent.classList.add('active');
+
+          trigger.classList.add('active');
+          if (aboutImage) aboutImage.classList.remove('fading');
+        };
+        newImg.src = topicsData[topic].imgSrc;
+      }
     });
   });
 }
