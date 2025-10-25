@@ -11,6 +11,10 @@ const detailButtons = document.querySelectorAll('#project-grid .btn-details');
 const aboutSection = document.getElementById('about-interactive');
 //Seleciona o container principal da interação.
 
+//EVENTO DE FADEIN NAS SECTIONS
+
+const sectionObserver = document.querySelectorAll('.reveal');
+
 mobileBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   icon.classList.toggle('fa-bars');
@@ -198,3 +202,23 @@ if (aboutSection) {
     });
   });
 }
+
+//EVENTO DE FADEIN NAS SECTIONS
+const handleIntersection = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fadeIn');
+    } else {
+      entry.target.classList.remove('fadeIn');
+    }
+  });
+};
+
+const observerOptions = {
+  threshold: 0.2,
+};
+
+const observer = new IntersectionObserver(handleIntersection, observerOptions);
+sectionObserver.forEach(section => {
+  observer.observe(section);
+});

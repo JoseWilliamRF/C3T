@@ -40,6 +40,38 @@ section {
   text-align: center;
 }
 
+/* FADEIN DO JS NAS PAGIANAS */
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-from-bottom {
+  transform: translateY(40px);
+}
+
+.reveal-from-left {
+  transform: translateX(-50px);
+}
+.reveal-from-right {
+  transform: translateX(50px);
+}
+
+.reveal-fade-only {
+  transform: translateY(0);
+}
+
+.reveal.fadeIn {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
 @media screen and (max-width: 1170px) {
   .top-title {
     font-size: 1.2rem;
