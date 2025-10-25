@@ -1,5 +1,6 @@
 #about-interactive {
   color: white;
+  overflow: hidden;
 }
 .about-container {
   display: flex;
