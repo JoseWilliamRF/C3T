@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  outline: 1px solid red;
 }
 body {
   padding-top: 98px;
@@ -12,7 +13,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  overflow-x: hidden;
 }
 
 section {
