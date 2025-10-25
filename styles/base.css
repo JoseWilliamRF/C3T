@@ -48,11 +48,6 @@ section {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.reveal.fadeIn {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .reveal-from-bottom {
   transform: translateY(40px);
 }
@@ -70,7 +65,7 @@ section {
 
 .reveal.fadeIn {
   opacity: 1;
-  transform: translateY(0) translateX(0);
+  transform: translateX(0) translateY(0) scale(1) rotate(0);
 }
 
 @media screen and (max-width: 1170px) {
