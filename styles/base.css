@@ -68,6 +68,11 @@ section {
   transform: translateX(0) translateY(0) scale(1) rotate(0);
 }
 
+.page-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @media screen and (max-width: 1170px) {
   .top-title {
     font-size: 1.2rem;

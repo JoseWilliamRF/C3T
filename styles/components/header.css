@@ -71,11 +71,6 @@ a::after {
 }
 
 @media screen and (max-width: 996px) {
-  header {
-    width: 100vw;
-    justify-self: center;
-  }
-
   #navbar #nav_list {
     display: none;
   }
