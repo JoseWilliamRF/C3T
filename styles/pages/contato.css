@@ -31,6 +31,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 380px;
+  text-decoration: none;
 }
 
 /* Efeito de "levantar" no hover */
@@ -73,8 +74,6 @@
 .contact-card--email:hover {
   border-color: #5c89b5;
 }
-
-/* Card Instagram (Gradiente no Ícone, Borda Rosa/Laranja no Hover) */
 
 .contact-card--instagram i {
   /* Cria o gradiente do Instagram e o aplica ao texto do ícone */
